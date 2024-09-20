@@ -1,6 +1,6 @@
 #!/bin/bash
 
-service="mysql"
+read -p "Enter the service:" service
 
 echo "Select Option"
 
