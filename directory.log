@@ -1,0 +1,7 @@
+total 20
+drwxrwxr-x 3 sudarshan sudarshan 4096 Sep 20 17:45 .
+drwxrwxr-x 7 sudarshan sudarshan 4096 Sep 20 17:06 ..
+-rw-rw-r-- 1 sudarshan sudarshan    0 Sep 20 17:45 directory.log
+drwxrwxr-x 8 sudarshan sudarshan 4096 Sep 20 17:06 .git
+-rw-rw-r-- 1 sudarshan sudarshan    7 Sep 20 17:06 README.md
+-rwxr-xr-x 1 root      root       328 Sep 20 17:45 utlcmd.sh
