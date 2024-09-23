@@ -8,6 +8,8 @@ if [ $( expr "$port" : "[0-9]*") -eq 0 ]; then
 
 else
 
+	ping "$port"
+
 	echo "the prot number is : $port"
 
 fi
