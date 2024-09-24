@@ -2,11 +2,11 @@
 
 password='Sudu@2001'
 
-backupdir="/home/sudarshan/work/Linux"
+backupdir="/home/sudarshan/work/Linux/database"
 
 date=$(date +"%Y%m%d_%H%M%S")
 
-for db in $(cat databases.txt); do
+for db in $(cat database.txt); do
 
 	db_backupdir="$backupdir/$db"
 

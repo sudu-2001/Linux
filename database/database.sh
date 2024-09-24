@@ -2,7 +2,7 @@
 
 password='Sudu@2001'
 
-for db in $(cat databases.txt); do
+for db in $(cat database.txt); do
 
 	echo "Backup of databases: $db"
 
