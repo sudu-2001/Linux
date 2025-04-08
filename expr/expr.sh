@@ -8,8 +8,8 @@ percent_mem=$( expr "$used_mem" \* 100 / "$total_mem" )
 
 echo "The percentage of memory used is: $percent_mem"
 
-if [ "$percent_mem" -gt 5 ]; then
+if [ "$percent_mem" -gt 100 ]; then
 
-	echo "Warning: used above 5%"
+	echo "Warning: used above 10%"
 
 fi

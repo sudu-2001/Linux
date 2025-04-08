@@ -1,33 +1,30 @@
-#!/bin/bash
+#! /bin/bash
 
 declare -A server_command=(
 
-	["sudarshan@127.0.0.1"]="df -h; hostname; whoami; free -h; neofetch"
+	["sudarshan@127.0.0.1"]="free -m; neofetch; df -h; ipcalc 192.168.37.16"
 
-	["hdoop@127.0.0.1"]="free -m; free -h; neofetch; ipcalc 192.168.1.76"
-
+	["hdoop@127.0.0.1"]="free -m; neofetch; df -h; ipcalc 192.168.37.16"
 
 )
 
 for server in "${!server_command[@]}"; do
 
-	echo "$server command is executing.... "
+	echo "$server is executing......."
+
+	sleep 2
 
 	ssh "$server" "${server_command[$server]}"
 
 	if [ $? -eq 0 ]; then
 
-		echo "$server command are executing..."
+		echo "$server is executing....."
 
 	else
 
-		echo "$server command is not executed..."
+		echo "$server is not executing..."
 
 
 	fi
-
-	echo "------------------------------------------------"
-
-	sleep 4
 
 done

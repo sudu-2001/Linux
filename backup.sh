@@ -1,24 +1,18 @@
 #!/bin/bash
 
-sourdir="/home/sudarshan/work/test"  # Source directory to backup
-backupdir="/home/sudarshan/backup"   # Backup directory
+sourcedir="/home/sudarshan/sud1"
+backupdir="/home/sudarshan/backup"
+date=$(date +%Y%m%d_%H%M%S)  # Corrected date format
+backupfil="backup_$date.tar.gz"
 
-date=$(date +%Y%m%d_%H%M%S)          # Get current date and time
-backupfil="backup_$date.tar.gz"       # Backup file name
-
-# Check if the backup directory exists, if not, create it
 if [ ! -d "$backupdir" ]; then
     mkdir -p "$backupdir"
 fi
 
-# Create the backup using tar and gzip
-tar -czf "$backupdir/$backupfil" "$sourdir"
+tar -czf "$backupdir/$backupfil" "$sourcedir"
 
-# Check if the backup command was successful
 if [ $? -eq 0 ]; then
-    echo "Backup completed successfully"
-    echo "Backup is saved as $backupdir/$backupfil"
+    echo "Backup of files successfully completed"
 else
-    echo "Backup failed"
+    echo "Not completed successfully"
 fi
-

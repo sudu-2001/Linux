@@ -1,39 +1,39 @@
 #!/bin/bash
 
-password='Sudu@2001'
+password="Sudu@2001"
 
-backupdir="/home/sudarshan/work/Linux/database"
+backup_dir="/home/sudarshan/work/Linux/database"
 
-date=$(date +"%Y%m%d_%H%M%S")
+date=$(date "+%Y%m%d_%H%M%S")
 
 for db in $(cat database.txt); do
 
-	db_backupdir="$backupdir/$db"
+	db_backup_dir="$backup_dir/$db"
 
-	if [ ! -d "$db_backupdir" ]; then
+	if [ ! -d "$db_backup_dir" ]; then
 
-		mkdir -p "$db_backupdir"
+		mkdir -p "$backupdir"
 
 	fi
 
-	backupfile="${db_backupdir}/${db}_${date}_backup.gz"
+	echo "Back up database is started..."
 
-	echo "Starting the backup..."
+	backup_file="${db_backup_dir}/${db}_${date}_backup.gz"
 
-	mysqldump -u root -p"$password" "$db" | gzip > "$backupfile"
+	mysqldump -u root -p"$password" "${db}"| gzip > "$backup_file"
 
 	if [ $? -eq 0 ]; then
 
-		echo "Bcckup $db is sucessfull completed "
+		echo "${db} is successfully done"
 
-		echo "Backup file: $backupfile"
+		echo "Backup of file: ${db}"
 
 	else
 
-		echo "Back up is not done successfully"
+		echo "${db} back up is not done sucessfully"
 
 	fi
 
-	sleep 2
+	sleep 4
 
 done
